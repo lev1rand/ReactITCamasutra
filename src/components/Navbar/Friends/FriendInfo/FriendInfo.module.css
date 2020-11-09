@@ -1,0 +1,14 @@
+.userImg{
+    width:50px;
+    grid-area:i;
+    border-radius: 30px;
+}
+
+.userNames{
+    grid-area:n;
+    font-size:15px;
+}
+.friends{
+    display:grid;
+    grid-template-columns: 3fr 3fr 3fr;
+}
