@@ -1,0 +1,12 @@
+.userPhoto{
+    width:100px;
+
+}
+
+.selected{
+    font-weight: bold;
+}
+
+span{
+    margin:5px;
+}

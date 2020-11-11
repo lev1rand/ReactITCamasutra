@@ -8,9 +8,9 @@ import { Route } from 'react-router-dom';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
-import Users from './components/User/User';
+import UsersContainer from './components/User/UsersContainer';
 
-const App = (props) => {
+const App = () => {
   return (
     <div className='app-wrapper'>
       <Header></Header>
@@ -21,7 +21,7 @@ const App = (props) => {
         <Route exact path='/music' render={() => <Music />} />
         <Route exact path='/settings' render={() => <Settings />} />
         <Route exact path='/news' render={() => <News />} />
-        <Route exact path='/users' render={() => <Users/>} />
+        <Route exact path='/users' render={() => <UsersContainer/>} />
       </div>
     </div>
   )
