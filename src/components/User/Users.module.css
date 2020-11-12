@@ -3,10 +3,11 @@
 
 }
 
-.selected{
+.selectedPage{
     font-weight: bold;
 }
 
 span{
     margin:5px;
+    cursor: pointer;
 }

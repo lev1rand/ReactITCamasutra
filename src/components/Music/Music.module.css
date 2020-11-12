@@ -1,0 +1,30 @@
+.albumPic{
+    grid-area:'p';
+    width:205px;
+}
+.musicContainer{
+    display:grid;
+    grid-template-areas: 
+    "p t";
+    grid-template-columns: 30fr 40fr;
+    width:500px;
+    height:150px;
+    margin:15px;
+}
+.main{
+   grid-area: 't';
+
+}
+.songName{
+    font-size: 30px;
+}
+
+.buttons{
+    margin-top:60px;
+}
+
+ .buttons button{
+    margin-left:20px;
+    width:70px;
+    font-size:20px;
+ }
