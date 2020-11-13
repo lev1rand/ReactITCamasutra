@@ -1,7 +1,8 @@
 import React from 'react';
 import s from './FriendInfo.module.css'
 
-const FriendInfo = (props) => {
+const FriendInfo = (props) => 
+{
     let FriendInfo = props.friendInfo.map(fi => (<div><img src={fi.profileImage} className = {s.userImg}/><div class = {s.userNames}> {fi.name} </div></div> ));
 
     return (

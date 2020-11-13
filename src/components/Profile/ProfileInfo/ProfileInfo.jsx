@@ -1,14 +1,20 @@
 import React from 'react';
+import Preloader from '../../common/Preloader';
 import s from "./ProfileInfo.module.css";
+import preloaderImg from '../../../assets/images/preloader.gif';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+
+if(!props.profile){
+
+  return <Preloader loadImage={preloaderImg}/>
+}
+
   return (
     <div>
-      <div>
-        <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" />
-      </div>
       <div className={s.descriptionBlock}>
-        ava+desc
+           <img className = {s.userPic} src = {props.profile.photos.large}/>
+
       </div>
     </div>);
 }
