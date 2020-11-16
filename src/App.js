@@ -12,15 +12,16 @@ import UsersContainer from './components/User/UsersContainer';
 import MusicContainer from './components/Music/MusicContainer';
 import NavBarContainer from './components/Navbar/NavbarContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 const App = () => {
   return (
     <div className='app-wrapper'>
-      <Header></Header>
+      <HeaderContainer/>
       <NavBarContainer/>
       <div className='app-wrapper-content'>
         <Route exact path='/dialogs' render={() => <DialogsContainer/>} />
-        <Route  path='/profile' render={() => <ProfileContainer/>} />
+        <Route  path='/profile/:userId?' render={() => <ProfileContainer/>} />
         <Route exact path='/music' render={() => <MusicContainer />} />
         <Route exact path='/settings' render={() => <Settings />} />
         <Route exact path='/news' render={() => <News />} />

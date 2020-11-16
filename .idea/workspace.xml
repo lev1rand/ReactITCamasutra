@@ -18,12 +18,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Header" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Iryna\React\Projects\ReactITCamasutra\ReactITCamasutra\src\components\Header" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -34,6 +40,9 @@
       <option name="presentableId" value="Default" />
       <updated>1604936782345</updated>
       <workItem from="1604936784429" duration="730000" />
+      <workItem from="1605512771638" duration="6374000" />
+      <workItem from="1605525837207" duration="3959000" />
+      <workItem from="1605530677254" duration="6977000" />
     </task>
     <servers />
   </component>
@@ -41,9 +50,9 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1459" y="90" key="SettingsEditor" timestamp="1604936865130">
+    <state x="-1459" y="90" key="SettingsEditor" timestamp="1605536870576">
       <screen x="-1920" y="-75" width="1920" height="1040" />
     </state>
-    <state x="-1459" y="90" key="SettingsEditor/0.0.1536.824/-1920.-75.1920.1040@-1920.-75.1920.1040" timestamp="1604936865130" />
+    <state x="-1459" y="90" key="SettingsEditor/0.0.1536.824/-1920.-75.1920.1040@-1920.-75.1920.1040" timestamp="1605536870576" />
   </component>
 </project>
