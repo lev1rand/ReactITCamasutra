@@ -2,7 +2,8 @@ import React from 'react';
 import Header from "./Header";
 import {connect} from "react-redux";
 import {logIn, logOut, setUserData, toggleIsFetching} from "../../redux/auth-reducer";
-import {authAPI} from "../../api/api"
+import {authMe} from "../../redux/auth-reducer"
+import {compose} from "redux";
 
 class HeaderContainer extends React.Component {
     constructor(props) {
@@ -14,14 +15,7 @@ class HeaderContainer extends React.Component {
     }
 
     componentDidMount() {
-       authAPI.authMe()
-            .then(data => {
-                    if (data.resultCode === 0) {
-                        let {id, login, email} = data.data;
-                        this.props.setUserData(id, email, login);
-                    }
-                }
-            );
+        this.props.authMe();
     }
 }
 
@@ -32,11 +26,13 @@ let mapStateToProps = (state) => {
         isAuthorized: state.auth.isAuthorized
     }
 }
-
-export default connect(mapStateToProps,
-    {
-        toggleIsFetching,
-        setUserData,
-        logIn,
-        logOut
-    })(HeaderContainer);
+export default compose(
+    connect(mapStateToProps,
+        {
+            toggleIsFetching,
+            setUserData,
+            logIn,
+            logOut,
+            authMe
+        })
+)(HeaderContainer);

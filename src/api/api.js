@@ -6,11 +6,11 @@ let configs = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers:
         {
-            "API-KEY": '549d015c-e4a2-4a73-a1d7-6400e0b743db'
+            "API-KEY": '0e66d03e-e9e4-4fb4-b1b2-827f90ebfef7'
         }
 });
 
-export const usersAPI= {
+export const usersAPI = {
     getUsers: (currentPage = 1, pageSize = 10) => {
         return configs.get(`users?page=${currentPage}&count=${pageSize}`)
             .then(response => response.data);
@@ -22,11 +22,27 @@ export const usersAPI= {
     unfollowUser: (userId) => {
         return configs.delete(`follow/${userId}`)
             .then(response => response.data);
-    }
+    },
+
 }
 
+export const profileAPI = {
+    getProfile: (userId) => {
+        return configs.get(`profile/${userId}`).then(response => response.data);
+    },
+    getStatus: (userId) => {
+        return configs.get(`profile/status/${userId}`).then(response => response.data);
+    },
+    updateStatus: (status) => {
+        return configs.put(`profile/status`,
+            {
+                status: status
+            });
+    }
+}
 export const authAPI = {
-    authMe:() => {
+    authMe: () => {
         return configs.get(`auth/me`).then(response => response.data);
     }
 }
+

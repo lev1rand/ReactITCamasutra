@@ -2,6 +2,7 @@ import React from 'react';
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css';
+import Login from "../Auth/Login";
 
 const Dialogs = (props) => {
     let dialogsElements = props.dialogsPage.dialogs.map(dialog => (<DialogItem id={dialog.id} name={dialog.name}></DialogItem>));
@@ -16,7 +17,6 @@ const Dialogs = (props) => {
         let body = e.target.value;
         props.updateNewMessageBody(body);
     }
-
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
