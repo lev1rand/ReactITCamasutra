@@ -1,6 +1,6 @@
-import navBarReducer from "./navBarReducer";
-import profileReducer from "./profileReducer";
-import dialogsReducer from "./dialogsReducer";
+import navBarReducer from "./reducers/navBarReducer";
+import profileReducer from "./reducers/profileReducer";
+import dialogsReducer from "./reducers/dialogsReducer";
 
 let store = {
     _callSubscriber() {

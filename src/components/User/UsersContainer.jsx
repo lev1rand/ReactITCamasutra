@@ -1,27 +1,30 @@
 import {connect} from "react-redux";
 import React from "react";
 import {
-    follow,
     toggleIsFetching,
     setCurrentPage,
     setTotalUsersCount,
     setUsers,
-    unfollow,
     toggleFollowingProgress,
-    getUsers,
     followThunk,
-    unfollowThunk
-} from "../../redux/usersReducer";
+    unfollowThunk,
+    getUsers, toggleFollow
+} from "../../redux/reducers/usersReducer";
 import Users from "./Users";
 import preloaderImg from '../../assets/images/preloader.gif';
-import Preloader from "../common/Preloader";
-import {withAuthRedirect} from "../hoc/withAuthRedirect";
+import Preloader from "../common/Preloader/Preloader";
+import {withAuthRedirect} from "../common/HOCs/withAuthRedirect";
 import {compose} from "redux";
+import {getIsAuth} from "../../redux/selectors/auth-selector";
+import {
+    getCurrentPage,
+    getIsFetching,
+    getIsFollowing,
+    getPageSize,
+    getTotalUsersCount, getUsersSelector
+} from "../../redux/selectors/users-selector";
 
 class UsersContainer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     onPageChanged = (p) => {
         this.props.setCurrentPage(p);
@@ -37,7 +40,6 @@ class UsersContainer extends React.Component {
                        pageSize={this.props.pageSize}
                        onPageChanged={this.onPageChanged}
                        followThunk={this.props.followThunk}
-                       unfollowThunk={this.props.unfollowThunk}
                        users={this.props.users}
                        isFollowing={this.props.isFollowing}
                        toggleFollowingProgress = {this.props.toggleFollowingProgress}
@@ -54,21 +56,20 @@ class UsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        users: state.usersPage.users,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        pageSize: state.usersPage.pageSize,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
-        isFollowing: state.usersPage.isFollowing,
-        isAuth: state.auth.isAuthorized
+        users: getUsersSelector(state),
+        totalUsersCount: getTotalUsersCount(state),
+        pageSize: getPageSize(state),
+        currentPage: getCurrentPage(state),
+        isFetching:getIsFetching(state),
+        isFollowing: getIsFollowing(state),
+        isAuth: getIsAuth(state)
     }
 }
 
 export default compose(
     withAuthRedirect,
     connect(mapStateToProps, {
-        follow,
-        unfollow,
+        toggleFollow,
         setUsers,
         setCurrentPage,
         setTotalUsersCount,

@@ -1,9 +1,9 @@
 import React from "react"
 import { connect } from "react-redux"
 import Music from './Music'
-import { addSong, deleteSong, setSongs } from '../../redux/musicReducer'
-import Login from "../Auth/Login";
-import {withAuthRedirect} from "../hoc/withAuthRedirect";
+import { addSong, deleteSong, setSongs } from '../../redux/reducers/musicReducer'
+import Login from "../common/Auth/Login";
+import {withAuthRedirect} from "../common/HOCs/withAuthRedirect";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
 

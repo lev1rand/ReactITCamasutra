@@ -1,12 +1,13 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
-import dialogsReducer from "./dialogsReducer";
-import profileReducer from "./profileReducer";
-import navBarReducer from "./navBarReducer";
-import userReducer from "./usersReducer";
-import musicReducer from "./musicReducer";
-import authReducer from "./auth-reducer";
+import {applyMiddleware, combineReducers, compose, createStore} from "redux";
+import dialogsReducer from "./reducers/dialogsReducer";
+import profileReducer from "./reducers/profileReducer";
+import navBarReducer from "./reducers/navBarReducer";
+import userReducer from "./reducers/usersReducer";
+import musicReducer from "./reducers/musicReducer";
+import authReducer from "./reducers/auth-reducer";
 import thunkMiddleware from "redux-thunk";
 import {reducer as formReducer} from "redux-form"
+import appReducer from "./reducers/app-reducer";
 
 let reducers = combineReducers(
     {
@@ -16,10 +17,13 @@ let reducers = combineReducers(
         usersPage: userReducer,
         musicPage: musicReducer,
         auth: authReducer,
-        form: formReducer
+        form: formReducer,
+        app: appReducer
     }
 );
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+let store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)));
+window.__store__ = store;
 
 export default store;

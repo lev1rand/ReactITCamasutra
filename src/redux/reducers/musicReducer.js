@@ -26,7 +26,6 @@ let initialState = {
 
 const musicReducer = (state = initialState, action) => {
     switch (action.type) {
-
         case SET_SONGS:
             return {
                 ...state, songs: [...action.songs]
@@ -36,7 +35,7 @@ const musicReducer = (state = initialState, action) => {
             return {
                 ...state, 
                 songs: state.songs.map(s=>{
-                    if(s.id == action.id){
+                    if(s.id === action.id){
                         return{
                             ...s, isAdded:true
                         }
@@ -50,7 +49,7 @@ const musicReducer = (state = initialState, action) => {
             return {
                 ...state, 
                 songs: state.songs.map(s=>{
-                    if(s.id == action.id){
+                    if(s.id === action.id){
                         return {
                             ...s, isAdded:false
                         }

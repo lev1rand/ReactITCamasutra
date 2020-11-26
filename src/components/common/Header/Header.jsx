@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./Header.module.css";
-import title from '../../assets/images/title.png'
+import title from '../../../assets/images/title.png'
 import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
@@ -9,8 +9,13 @@ const Header = (props) => {
         <div className={s.loginBlock}>
             {
                 props.isAuthorized
-                    ? props.login
-                    : <NavLink to='/login'>Login </NavLink>
+                    ? <><div>
+                        {props.login}
+                    </div>
+                    <div>
+                        <button onClick = {props.logOut}>Logout</button>
+                    </div></>
+                : <NavLink to='/login'>Login </NavLink>
             }
 
         </div>

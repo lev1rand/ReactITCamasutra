@@ -43,6 +43,12 @@ export const profileAPI = {
 export const authAPI = {
     authMe: () => {
         return configs.get(`auth/me`).then(response => response.data);
+    },
+    login: (email, password, rememberMe = false) => {
+        return configs.post('auth/login', {email, password, rememberMe});
+    },
+    logout: () => {
+        return configs.delete('auth/login');
     }
 }
 
